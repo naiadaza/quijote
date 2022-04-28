@@ -1,0 +1,75 @@
+Script started on 2022-04-28 10:42:09+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;vant@minimoove: ~/quijote/01_basicos[01;32mvant@minimoove[00m:[01;34m~/quijote/01_basicos[00m$ phython3 05_world[K[Kd_cout[Knt_flatMap.py out.[K_quijo te_s05.txt
+
+Orden «phython3» no encontrada. Quizá quiso decir:
+
+  la orden «python3» del paquete deb «python3 (3.8.2-0ubuntu2)»
+
+Pruebe con: sudo apt install <nombre del paquete deb>
+
+]0;vant@minimoove: ~/quijote/01_basicos[01;32mvant@minimoove[00m:[01;34m~/quijote/01_basicos[00m$ phython3 05_word_count_flatMap.py out_quijote_s05.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cython3 05_word_count_flatMap.py out_quijote[1P_s05.txt[A]0;vant@minimoove: ~/quijote/01_basicos[01;32mvant@minimoove[00m:[01;34m~/quijote/01_basicos[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/usr/local/lib/python3.8/dist-packages/pyspark/jars/spark-unsafe_2.12-3.2.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/04/28 10:43:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Traceback (most recent call last):
+  File "05_word_count_flatMap.py", line 22, in <module>
+    words(sc, sys.argv[1])
+  File "05_word_count_flatMap.py", line 12, in words
+    print (words_rdd.collect())
+  File "/usr/local/lib/python3.8/dist-packages/pyspark/rdd.py", line 950, in collect
+    sock_info = self.ctx._jvm.PythonRDD.collectAndServe(self._jrdd.rdd())
+  File "/usr/local/lib/python3.8/dist-packages/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/usr/local/lib/python3.8/dist-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/home/vant/quijote/01_basicos/out_quijote_s05.txt
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:304)
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:244)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:332)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:205)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:300)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:296)
+	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:300)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:296)
+	at org.apache.spark.api.python.PythonRDD.getPartitions(PythonRDD.scala:55)
+	at org.apache.spark.rdd.RDD.$anonfun$partitions$2(RDD.scala:300)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:296)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2279)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1030)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:414)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:1029)
+	at org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:180)
+	at org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.IOException: Input path does not exist: file:/home/vant/quijote/01_basicos/out_quijote_s05.txt
+	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:278)
+	... 34 more
+
+]0;vant@minimoove: ~/quijote/01_basicos[01;32mvant@minimoove[00m:[01;34m~/quijote/01_basicos[00m$ exit
+
+Script done on 2022-04-28 10:44:19+02:00 [COMMAND_EXIT_CODE="1"]
